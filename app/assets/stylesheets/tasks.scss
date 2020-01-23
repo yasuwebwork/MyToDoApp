@@ -1,3 +1,79 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ConA {
+  //display: inline-block;
+  margin-top: 10px;
+  margin: auto;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  width: 150px;
+  text-align: center;
+  
+  &:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;
+  }
+}
+
+.ConC {
+  //display: none;
+  margin-top: 20px;
+  
+  
+  table {
+    
+    margin: auto;
+    width: 300px;
+    
+    td {
+    }
+  }
+}
+
+.ConD {
+  //display: none;
+  margin-top: 10px;
+
+  table {
+
+    margin: auto;
+    //width: 300px;x
+    text-align: center;
+    
+    tr {
+      height: 80px;
+      padding: 10px 24px;
+      
+      td{
+         width: 200px;
+        
+        
+        &:nth-of-type(5) {
+          
+          width: 300px;
+          a{
+
+            text-align: center;
+
+            background-color: #9ec34b;
+            border: 2px solid #9ec34b;
+            color: #FFF;
+            font-weight: bold;
+            padding: 10px 24px;
+            border-radius: 4px;
+            position: relative;
+
+          }
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   
   def index
     @tasks = Task.order('limit_date').all
-    @status = ['todo', 'doing', 'done'];
+    @status = ['todo', 'doing', 'done']
   end
   
   def show
@@ -12,7 +12,8 @@ class TasksController < ApplicationController
   end
   
   def store
-    task = Task.new
+    id   = params[:id]
+    task = Task.find(id)
     task.task       = params[:task]
     task.state      = params[:state]
     task.limit_date = params[:limit_date]

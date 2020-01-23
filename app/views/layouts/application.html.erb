@@ -1,21 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mytodo</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Mytodo</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
+  <script src="https://use.fontawesome.com/926fe18a63.js"></script>
+</head>
 
-  <body>
-    <%= render 'layouts/header' %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container">
+<body>  
+  <header>
+      <h1 class="headA">
+        <%= link_to "ToDo", '/tasks'%>
+      </h1>
+    <ul class="headB">
+      <li>
+        <%= link_to "追加",   '#' %>
+      </li>
+      <li>
+        <%= link_to "Help",   '#' %>
+      </li>
+      <li>
+        <%= link_to "Log in", '#' %>
+      </li>
+    </ul>
+  </header>
+  <p class="notice">
+    <%= notice %>
+  </p>
+  <p class="alert">
+    <%= alert %>
+  </p>
+  <div class="container">
     <%= yield %>
+  </div>
+  <footer>
+      <div class="footA">
+        <h2>ToDo</h2>
+        <p>
+          〒000-000 大阪府大阪市北区<br>
+        </p>
+      </div>
+    <div class="footB">
+      <ul>
+        <li><a href="#">
+          <span class="fa fa-twitter"></span>
+          </a></li>
+      </ul>
     </div>
-    <%= render 'layouts/footer' %>
-  </body>
+  </footer>
+</body>
+
 </html>

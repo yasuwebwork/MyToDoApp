@@ -1,54 +1,73 @@
-<form method="POST" action="/tasks">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <div>
-    <label for="task">Task Name</label>
-    <input id="task" name="task" type="text" required>
-  </div>
-  <div>
-    <select name="state">
-      <% @status.each_with_index do |s,i| %>
-      <option value="<%= s %>"><%= s %></option>
-      <% end %>
-    </select>
-    <label>Task State</label>
-  </div>
-  <div>
-    <input type="date" name="limit_date" required>
-    <label>Task Limit Day</label>
-  </div>
-  <p>
-    <button type="submit">create</button>
-  </p>
-</form>
-<br><hr>
 <!-- flashメッセージを表示 -->
+
+<div class="ConA">
+Create Task
+</div>
+<div class="ConB">
 <% flash.each do |msg| %>
 <p><%= msg %></p>
 <% end %>
-<table>
-  <thead>
-    <tr>
-      <th>State</th>
-			<th>Task</th>
-      <th>Limit</th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @tasks.each do |t| %>
-    <tr>
-      <td><%= t.state %></td>
-      <td><%= t.task %></td>
-			<td><%= t.limit_date %></td>
-      <td>
-        <!-- 次のタスク詳細取得画面へのリンク -->
-        <a href="/tasks/<%= t.id %>">edit</a>
-      </td>
-      <td>
-				<a href="/tasks/done/<%= t.id %>">完了</a>
-      </td>
-    </tr>
-    <% end %>
-  </tbody>
+</div>
+<div class="ConC">
+	<form method="POST" action="/tasks">
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+		<table>
+			<tr>
+				<td><label for="task">タスク名</label></td>
+				<td><input id="task" name="task" type="text" required></td>
+			</tr>
+			<tr>
+				<td><label>状態</label></td>
+				<td>
+					<select name="state">
+						<% @status.each_with_index do |s,i| %>
+						<option value="<%= s %>"><%= s %></option>
+						<% end %>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td><label>期限</label></td>
+				<td><input type="date" name="limit_date" required></td>
+			</tr>
+			<tr>
+				<td><p><button type="submit">create</button></p></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<br><hr>
+
+<div class="ConD">
+	<table>
+		<thead>
+			<tr>
+				<th>状態</th>
+				<th>タスク</th>
+				<th>締め切り</th>
+				<th>終了日</th>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @tasks.each do |t| %>
+			<tr>
+				<td><%= t.state %></td>
+				<td><%= t.task %></td>
+				<td><%= t.limit_date %></td>
+				<td>--</td>
+				<td>
+					<a href="/tasks/done/<%= t.id %>"><span>完了</span></a>
+					<a href="/tasks/<%= t.id %>">編集</a>
+					<a href="#">削除</a>
+				</td>
+				
+					
+				
+			</tr>
+			<% end %>
+		</tbody>
 </table>
+</div>
