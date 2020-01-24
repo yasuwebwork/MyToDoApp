@@ -33,7 +33,8 @@
     margin: auto;
     width: 300px;
     
-    td {
+    tr {
+      height: 50px;
     }
   }
 }
@@ -45,7 +46,7 @@
   table {
 
     margin: auto;
-    //width: 300px;x
+    //width: 300px;
     text-align: center;
     
     tr {

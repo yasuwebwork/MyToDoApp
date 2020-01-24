@@ -4,7 +4,7 @@ import App from './app.vue'
 document.body.appendChild(document.createElement('hello'))
 
 new Vue({
-  el: 'hello',
+  el: 'ConD',
   template: '<App/>',
   components: { App }
 })
